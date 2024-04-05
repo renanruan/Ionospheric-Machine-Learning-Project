@@ -1,7 +1,7 @@
 # PO-233
 
 ### Ideia Inicial
-A **sintilação** é um fenômeno da ionosfera que pode afetar certos tipos de radares de aviões. O objetivo deste projeto é classificar se esse fenômeno está ocorrendo ou não a partir de dados da ionosfera.
+A **cintilação** é um fenômeno da ionosfera que pode afetar certos tipos de radares de aviões. O objetivo deste projeto é classificar se esse fenômeno está ocorrendo ou não a partir de dados da ionosfera.
 
 ### Classificação
 Este fenômeno pode ser identificado através do valor absoluto do parâmetro HANTS:
@@ -12,6 +12,7 @@ Este fenômeno pode ser identificado através do valor absoluto do parâmetro HA
 Através de um algoritmo de classificação, pretendemos utilizar um conjunto de parâmetros relevantes para classificar se o fenômeno está ocorrendo.
 
 ### Parâmetros Relevantes
+Possíveis candidatos de parâmetros relevantes para teste:
 - alpha
 - gamma
 - phi (e variações)
