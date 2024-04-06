@@ -1,7 +1,8 @@
 # PO-233
 
 ### Ideia Inicial
-A **cintilação** é um fenômeno da ionosfera que pode afetar certos tipos de radares de aviões. O objetivo deste projeto é classificar se esse fenômeno está ocorrendo ou não a partir de dados da ionosfera.
+O **Gradiente Espacial** é uma parte importante da comunicação via satélite e está envolvido com diversos parâmentros de comunicação. 
+***Cintilação***, ***Bolhas de Plasma Equatorial*** e a ***Posição Relativa do Satélite*** são capazes de alterar o **Gradiente Espacial**, por isso é importante para um satélite identificar quando essa alteração se torna relevante para seus parâmetros de comunicação. O objetivo deste projeto é classificar quando esse fenômeno é relevante ou não a partir de dados da ionosfera e da posição relativa de satélites.
 
 ### Classificação
 Este fenômeno pode ser identificado através do valor absoluto do parâmetro HANTS:
@@ -21,7 +22,8 @@ Possíveis candidatos de parâmetros relevantes para teste:
 ### Estrutura do Projeto
 ├─> Raw Data: Base de dados utilizada na produção do artigo
 <br>├─> Filtered Data: Base de dados após o tratamento
-<br>└─> Machine Learning: Arquivos relacionados ao aprendizado de máquina
+<br>├─> Machine Learning: Arquivos relacionados ao aprendizado de máquina
+<br>└─> Articles: Pasta com os artigos relacionados à base de dados. Ela foi usada primeiramente o artigo "Strong Ionospheric..."
 
 
 ### Passo-a-Passo
@@ -40,3 +42,10 @@ Possíveis candidatos de parâmetros relevantes para teste:
 #### **4. Escrita do Artigo**
 4.1. Estudar o padrão do artigo indicado pela professora
 <br>4.2. Escrever a Conclusão
+
+
+### Principais Informações do Artigo
+- S4 -> Indice de Amplitude da Sintilação
+- HANTS -> Algoritmo de superposição utilizado para preencher lacunas de medições que não foram possíveis de realizar
+- SJCE -> Estação de medida primária em São José dos Campos
+- SJCU -> Estação de medida secundária
