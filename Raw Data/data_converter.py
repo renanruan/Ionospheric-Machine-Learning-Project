@@ -3,7 +3,7 @@ import scipy.io
 import numpy as np
 import csv
 
-def show_files_keys():
+def iterate_mat_files():
     current_dir = os.path.dirname(__file__)
 
     files_in_dir = os.listdir(current_dir)
@@ -14,22 +14,20 @@ def show_files_keys():
         file_path = os.path.join(current_dir, mat_file)
         data = scipy.io.loadmat(file_path)
         print("Loaded data from:", mat_file)
-        print_keys(data, data.keys(), mat_file.replace(".mat", ""))
+        process_file(data, data.keys(), mat_file.replace(".mat", ".csv"))
 
-def print_keys(data, keys, file_name):
-    result = ""
-    folder_name = os.path.join(os.path.dirname(__file__),file_name)
-    os.makedirs(folder_name, exist_ok=True)
+def process_file(data, keys, file_name):
+    new_file_name = os.path.join(os.path.dirname(__file__),file_name)
     for key in keys:
         if(key != '__header__' and key != '__version__' and key != '__globals__'):
-            result+= key + '   '
-            structure_files(data[key], key, folder_name)
-    #(result)
+            save_file_in_csv(data[key], key, new_file_name)
 
-#Grad_tempo  = dados["Grad_tempo"];
-#Grad_data  = dados["Grad_data"];
+def save_file_in_csv(data, key, path):
 
-def structure_files(data, key, path):
+# Write matrix to CSV
+    with open(path, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
 
     # if isinstance(data, np.ndarray):
     #     test1 = data[0]
@@ -51,21 +49,21 @@ def structure_files(data, key, path):
     #                 writer.writerows(data)
 
 
-    if isinstance(data, np.ndarray) and isinstance(data[0], np.ndarray) and isinstance(data[0][0], np.ndarray):
-        folder_name = os.path.join(path,key)
-        os.makedirs(folder_name, exist_ok=True)
-        for idx, elem in enumerate(data):
-            structure_files(elem, 'atr '+ str(idx), folder_name)
-    elif isinstance(data, np.ndarray) and isinstance(data[0], np.ndarray):
-        file_name = os.path.join(path,key + ".csv")
-        with open(file_name, 'w', newline='') as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerows(data)
-    else:
-        file_name = os.path.join(path,key + ".csv")
-        with open(file_name, 'w', newline='') as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow(data)
+    # if isinstance(data, np.ndarray) and isinstance(data[0], np.ndarray) and isinstance(data[0][0], np.ndarray):
+    #     folder_name = os.path.join(path,key)
+    #     os.makedirs(folder_name, exist_ok=True)
+    #     for idx, elem in enumerate(data):
+    #         structure_files(elem, 'atr '+ str(idx), folder_name)
+    # elif isinstance(data, np.ndarray) and isinstance(data[0], np.ndarray):
+    #     file_name = os.path.join(path,key + ".csv")
+    #     with open(file_name, 'w', newline='') as csvfile:
+    #         writer = csv.writer(csvfile)
+    #         writer.writerows(data)
+    # else:
+    #     file_name = os.path.join(path,key + ".csv")
+    #     with open(file_name, 'w', newline='') as csvfile:
+    #         writer = csv.writer(csvfile)
+    #         writer.writerow(data)
 
 
-show_files_keys()
+iterate_mat_files()
