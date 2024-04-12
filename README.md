@@ -46,8 +46,8 @@ Possíveis candidatos de parâmetros relevantes para teste:
 ### Passo-a-Passo
 #### **1. Tratamento de Dados**
 ~~1.1. Identificar em quais arquivos estão os dados relevantes~~
-<br>1.2. Criar um algoritmo para extrair os dados do .mat e salvá-los em .csv
-<br>1.3. Remover atributos não necessários
+<br>~~1.2. Criar um algoritmo para extrair os dados do .mat e salvá-los em .csv~~
+<br>~~1.3. Remover atributos não necessários~~
 <br>1.4. Alterar o valor do atributo HANTS de contínuo para discreto 
 <br>1.5. Aplicar outros métodos de tratamento conforme orientações da professora
 #### **2. Criação do Algoritmo de Aprendizado de Máquina**
