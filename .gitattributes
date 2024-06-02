@@ -1,0 +1,12 @@
+Raw[[:space:]]Data/Grads_SJCU.mat filter=lfs diff=lfs merge=lfs -text
+Raw[[:space:]]Data/Grads_SJCU_TS.mat filter=lfs diff=lfs merge=lfs -text
+File[[:space:]]Raw[[:space:]]Data/SJCU_full.mat filter=lfs diff=lfs merge=lfs -text
+File[[:space:]]Raw[[:space:]]Data/SJCU_full_alas.mat filter=lfs diff=lfs merge=lfs -text
+Raw[[:space:]]Data/Grads_SJCU_Filtered.csv filter=lfs diff=lfs merge=lfs -text
+Raw[[:space:]]Data/Grads_SJCU.zip filter=lfs diff=lfs merge=lfs -text
+Filtered[[:space:]]Data/Grads_SJCU_Filtered.csv filter=lfs diff=lfs merge=lfs -text
+Data/Raw/Grads_SJCU.mat filter=lfs diff=lfs merge=lfs -text
+Data/Raw/Grads_SJCU.zip filter=lfs diff=lfs merge=lfs -text
+Data/Filtered/Classification/Final_Grads_SJCU.csv filter=lfs diff=lfs merge=lfs -text
+Data/Filtered/Regression/Final_Grads_SJCU.csv filter=lfs diff=lfs merge=lfs -text
+Data/Filtered/Deep_Learning/Final_Grads_SJCU.csv filter=lfs diff=lfs merge=lfs -text

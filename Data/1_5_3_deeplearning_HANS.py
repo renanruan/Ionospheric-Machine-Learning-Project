@@ -1,18 +1,23 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 def process_csv(input_file, output_file):
     # Read the CSV file into a DataFrame
     df = pd.read_csv(input_file)
 
-    # Find the maximum value among the last four columns
-    df['HANS'] = df.iloc[:, -4:].max(axis=1)
-
-    # Replace the last four columns with the new column
-    df.drop(df.columns[-5:-1], axis=1, inplace=True)
-    
     # Save the processed DataFrame to a new CSV file
     df.to_csv(output_file, index=False)
-    print("DEEP LEARNING HANS REPLACED")
+    print("DEEP LEARNING HANS ALREDY DONE")
+
+    # if 'HANS' in df.columns:
+    #     plt.figure()
+    #     df['HANS'].plot(kind='line')
+    #     plt.title('Plot')
+    #     plt.xlabel('Index')
+    #     plt.ylabel('Value')
+    #     plt.grid(True)
+    #     plt.show()
+
 
 print("1.5.3 ----------------------")
 # Specify the path to your input and output CSV files

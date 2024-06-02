@@ -20,13 +20,13 @@ def process_csv(input_file, output_file):
     outlier_mask = ((df < lower_bound) | (df > upper_bound)).any(axis=1)
     
     # Remove rows with outliers
-    df_filtered = df[~outlier_mask]
+    df_filtered = df #[~outlier_mask]
 
     print(df_filtered.describe())
     
     # Save the processed DataFrame to a new CSV file
     df_filtered.to_csv(output_file, index=False)
-    print("OUTLINES REMOVED")
+    print("REMOVE OUTLIERS NOT IMPLEMENTED")
 
 print("1.6 ----------------------")
 # Specify the path to your input and output CSV files

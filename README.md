@@ -42,18 +42,15 @@ Possíveis candidatos de parâmetros relevantes para teste:
 #### **1. Tratamento de Dados**
 ~~1.1. Identificar em quais arquivos estão os dados relevantes~~
 <br>~~1.2. Criar um algoritmo para extrair os dados do .mat e salvá-los em .csv~~
-<br>~~1.3. Remover atributos não necessários~~
-<br>~~1.4. Se alguma linha tiver todos os atributos HANTS em NAN, retirar a linha, os outros NAN serão a media da coluna~~
-<br>~~1.5. Tratas os multíplos atributos meta~~
-<br>~~1.5.1. Para classificação: Se algum atributo HANTS for >400, valor 1, se não, 0~~ ---> POUCOS VALORES MAIORES QUE 400 NAS COLUNAS HANS
-<br>~~1.5.2. Para regressão: Valor meta é o maior dos atributos HANS~~
-<br>~~1.5.3. Para aprendizado profundo: Valor meta é o maior dos atributos HANS~~
-<br>~~1.6. Remover ruidos~~
-<br>1.7. Balancear classe majoritária para fica maj/min < 3
-<br>~~1.8. Normalizar dados~~
-<br>~~1.8.1. Para classificação: Normalizar tudo menos o rótulo meta
-<br>~~1.8.2. Para regressão: Normalizar todas as colunas
-<br>~~1.8.3. Para aprendizado profundo: Normalizar todas as colunas
+<br>~~1.3. Remover atributos e linhas não necessários~~
+<br>~~1.4. Separar linhas pra cada atributo HANS, se alguma linha tiver o atributo HANTS em NAN, retirar a linha, os outros NAN serão igual ao ultimo valor~~
+<br>~~1.5. Tratar o atributo meta~~
+<br>~~1.5.1. Para classificação: Se algum atributo HANTS for asb() > 400, valor 1, se não, 0~~ ---> POUCOS VALORES MAIORES QUE 400 NAS COLUNAS HANS
+<br>~~1.5.2. Para regressão: Não precisa fazer nada ~~
+<br>~~1.5.3. Para aprendizado profundo: Não precisa fazer nada ~~
+<br>~~1.6. Remover ruidos | Não esta sendo feito ~~
+<br>~~1.7. Balancear classe majoritária para fica maj/min < 3 | Feito pelos proprios algoritmos de aprendizado ~~
+<br>~~1.8. Normalizar dados menos o atributo meta~~
 <br>~~1.9. Para classificação e regressão: aplicar janela deslizante~~
 #### **2. Criação do Algoritmo de Aprendizado de Máquina**
 ~~2.1. Estudar algoritmos de classificação capazes de trabalhar sobre uma base de dados temporal~~

@@ -1,21 +1,57 @@
 import pandas as pd
+import numpy as np
 
 def remove_rows_with_nan(csv_file):
     # Read the CSV file into a DataFrame
     df = pd.read_csv(csv_file, header=None)
 
-    # Check if the last four columns of each row contain NaN values
-    nan_mask = df.iloc[:, -4:].isna().all(axis=1)
+    # Extract features and target attributes
+    features = df.iloc[:, :-4]
+    targets = df.iloc[:, -4:]
 
-    # Remove rows where the last four columns have NaN values
-    df_filtered = df[~nan_mask]
+    # Prepare a list to hold the processed rows
+    processed_rows = []
 
-    # Replace NaN values in other columns with the mean of the respective column
-    df_filtered = df_filtered.fillna(df_filtered.mean())
+    # Process each row
+    for i in range(len(df)):
+        feature_row = features.iloc[i].tolist()
+        target_row = targets.iloc[i].tolist()
+        
+        collapsed_targets = []
+        temp_group = []
+        
+        for target in target_row:
+            if pd.isna(target):
+                continue  # Skip NaN values
+            
+            if abs(target) < 400:
+                temp_group.append(abs(target))
+            else:
+                if temp_group:
+                    collapsed_targets.append(max(temp_group))
+                    temp_group = []
+                collapsed_targets.append(abs(target))
+        
+        if temp_group:
+            collapsed_targets.append(max(temp_group))
+        
+        for collapsed_target in collapsed_targets:
+            processed_rows.append(feature_row + [collapsed_target])
 
-    print("NANS REMOVED OR REPLACED BY COLUMN MEAN")
+    # Convert the processed rows back to a DataFrame
+    processed_df = pd.DataFrame(processed_rows, columns=['Feature1', 'Feature2', 'Feature3', 'Target'])
 
-    return df_filtered
+    # Iterate through each row
+    for i in range(1, len(processed_df)):
+        # Iterate through each feature column
+        for col in processed_df.columns[:-1]:  # Exclude the last column (target)
+            # Check if the current value is NaN
+            if pd.isna(processed_df.at[i, col]):
+                processed_df.at[i, col] = processed_df.at[i-1, col]
+
+    print("TARGET DISTRIBUTED IN ROWS AND NANS REMOVED ")
+
+    return processed_df
 
 print("1.4 ----------------------")
 # Specify the path to your CSV file

@@ -24,8 +24,6 @@ def process_file(data, keys, file_name):
             save_file_in_csv(data[key], key, new_file_name)
 
 def save_file_in_csv(data, key, path):
-
-# Write matrix to CSV
     with open(path, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerows(data)
