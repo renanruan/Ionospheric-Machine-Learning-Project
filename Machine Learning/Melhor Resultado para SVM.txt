@@ -1,0 +1,40 @@
+Melhor Resultado para SVM
+
+#   TREINAMENTO - PREDIÇÃO - MÉTRICAS
+#   Utilizando um 5 fold com tamanho de treinamento 80% e teste 20% com distribuição uniforme de classes entre os folds
+#   Kernel RBF
+
+5-fold Stratified Cross Validation
+Confusion Matrix Fold 1:
+[[1996  217]
+ [   8   81]]
+Confusion Matrix Fold 2:
+[[2005  207]
+ [   2   87]]
+Confusion Matrix Fold 3:
+[[2015  197]
+ [   5   84]]
+Confusion Matrix Fold 4:
+[[2004  208]
+ [   5   84]]
+Confusion Matrix Fold 5:
+[[2023  189]
+ [   7   82]]
+Accuracy:
+0.9091778202676865
+Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       1.00      0.91      0.95     11061
+         1.0       0.29      0.94      0.44       445
+
+    accuracy                           0.91     11506
+   macro avg       0.64      0.92      0.70     11506
+weighted avg       0.97      0.91      0.93     11506
+
+Confusion Matrix Total:
+[[10043  1018]
+ [   27   418]]
+
+
+Link: https://colab.research.google.com/drive/18kwkYDhpi0mG10gO_hfhbZsJ6tAc-yYH?usp=sharing
