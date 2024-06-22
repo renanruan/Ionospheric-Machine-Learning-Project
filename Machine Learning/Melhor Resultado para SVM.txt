@@ -4,7 +4,6 @@ Melhor Resultado para SVM
 #   Utilizando um 5 fold com tamanho de treinamento 80% e teste 20% com distribuição uniforme de classes entre os folds
 #   Kernel RBF
 
-5-fold Stratified Cross Validation
 Confusion Matrix Fold 1:
 [[1996  217]
  [   8   81]]

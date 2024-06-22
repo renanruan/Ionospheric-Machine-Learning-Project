@@ -1,0 +1,39 @@
+Melhor Resultado para Regressão
+
+#   TREINAMENTO - PREDIÇÃO - MÉTRICAS
+#   Utilizando um 5 fold com tamanho de treinamento 80% e teste 20% com uma função de custo priorizando valores maiores que 400
+#   Treino com 100 epocas
+
+Confusion Matrix Fold 1:
+[[2077  141]
+ [  39   45]]
+Confusion Matrix Fold 2:
+[[2083  140]
+ [  31   47]]
+Confusion Matrix Fold 3:
+[[2090  109]
+ [  52   50]]
+Confusion Matrix Fold 4:
+[[2105  111]
+ [  45   40]]
+Confusion Matrix Fold 5:
+[[2099  106]
+ [  43   53]]
+Accuracy:
+0.9289935685729185
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.98      0.95      0.96     11061
+           1       0.28      0.53      0.37       445
+
+    accuracy                           0.93     11506
+   macro avg       0.63      0.74      0.66     11506
+weighted avg       0.95      0.93      0.94     11506
+
+Confusion Matrix Total:
+[[10454   607]
+ [  210   235]]
+
+
+Link: https://colab.research.google.com/drive/1vvw2RxN_nSpelgRxRDhDNgsXMFQX4h_I?usp=sharing
